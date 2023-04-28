@@ -1,6 +1,8 @@
 package net.lukas.betterpotatoes;
 
 import com.mojang.logging.LogUtils;
+import net.lukas.betterpotatoes.item.ModCreativeModeTabs;
+import net.lukas.betterpotatoes.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -25,6 +27,8 @@ public class BetterPotatoes
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -39,6 +43,9 @@ public class BetterPotatoes
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
+        if(event.getTab() == ModCreativeModeTabs.BETTERPOTATOES_TAB) {
+            event.accept(ModItems.SPEED_POTATO);
+        }
     }
 
 
