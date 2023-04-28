@@ -14,6 +14,12 @@ public class ModItems {
     public static final RegistryObject<Item> SPEED_POTATO = ITEMS.register("speed_potato",
             () -> new Item(new Item.Properties().food(ModFoods.SPEED_POTATO)));
 
+    public static final RegistryObject<Item> GOLDEN_POTATO = ITEMS.register("golden_potato",
+            () -> new Item(new Item.Properties().food(ModFoods.GOLDEN_POTATO)));
+
+    public static final RegistryObject<Item> STRENGTH_POTATO = ITEMS.register("strength_potato",
+            () -> new Item(new Item.Properties().food(ModFoods.STRENGTH_POTATO)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

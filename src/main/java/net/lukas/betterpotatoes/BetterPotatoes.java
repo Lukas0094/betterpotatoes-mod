@@ -45,6 +45,8 @@ public class BetterPotatoes
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
         if(event.getTab() == ModCreativeModeTabs.BETTERPOTATOES_TAB) {
             event.accept(ModItems.SPEED_POTATO);
+            event.accept(ModItems.GOLDEN_POTATO);
+            event.accept(ModItems.STRENGTH_POTATO);
         }
     }
 
